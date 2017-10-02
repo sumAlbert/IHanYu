@@ -81,6 +81,7 @@
                                     value="#pl.getPartnerLanguage().getLanguage_e()"></s:property></div>
                         </div>
                     </s:if>
+                    23
                 </s:iterator>--%>
             </div>
             <div class="page2-foot2">More</div>
