@@ -92,6 +92,7 @@
             <div class="page2-head1">语伴推荐</div>
             <div class="page2-head2">Recomended Partner</div>
             <div class="page2-hidden-list">
+
                 <%--<s:iterator value="partnerList" id="pl" begin="8" status="st">
                     <s:if test="#st.index<12">
                         <div class="page2-hidden-item" onclick="changePartner('
