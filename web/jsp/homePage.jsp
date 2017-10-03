@@ -52,7 +52,7 @@
     </div>
     <div class="content">
         <div class="page1">
-            <div class="page1-head1">这里，你能找到</div>
+            <div class="page1-head1">这里，你能找到 </div>
             <div class="page1-head2">Here , You can get</div>
             <div class="page1-buttons">
                 <div class="page1-button ">中文教师<br/>Chinese tutor</div>
