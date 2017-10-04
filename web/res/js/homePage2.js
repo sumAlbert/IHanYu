@@ -191,14 +191,16 @@ window.onload = function submitComment() {
             if (data.errorCode == "0000") {
                 $(".user").show();
                 $(".login-regist-item").hide();
+                $(".login-regist-item-transparent").hide();
             }
             else {
                 $(".user").hide();
                 $(".login-regist-item").show();
+                $(".login-regist-item-transparent").show();
             }
         },
         error: function () {
             alert("请求出错！");
         }
     });
-}
+};

@@ -44,7 +44,7 @@
                 <img class="user_head" src='<%=session.getAttribute("headp")%>'>
                 <div class="user_name"><%=session.getAttribute("username")%></div>
             </div>
-            <div class="user_item"
+            <div class="user_item_transparent"
                  onclick="changePerson('<%=session.getAttribute("usertype")%>','<%=session.getAttribute("email")%>')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人中心
             </div>
             <div class="user_item_transparent" onclick="loginOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出</div>
