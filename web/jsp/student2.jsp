@@ -97,7 +97,7 @@
                     <div class="info-st-line info-st-line-wechat">
                         <div class="info-st-line-left">国家</br>Country</div>
                         <div class="info-st-line-right">
-                            <div class="info-check-box">
+                            <div class=" ">
                                 <div class="info-checkbox-box">
                                     <div class="info-check-icon info-check-icon-active">
                                         <input type="radio" name="country" id="country" value="1" checked>

@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     /*将标志错误的样式恢复到原样子*/
     $(".info-input").focus(function () {
-        $(this).parent().css({"border": ".01em solid #555"});
+        $(this).parent().css({"border": ".05em solid #555"});
         $(this).parent().next().css({"opacity": "0"});
     });
     /*密码强度检测*/
@@ -47,19 +47,19 @@ $(document).ready(function () {
         if (!isEmail(email)) {
             alert("邮箱格式有误");
             result = "false";
-            $("#email").parent().css({"border": ".01em solid #f75555"});
+            $("#email").parent().css({"border": ".05em solid #f75555"});
             $("#email").parent().next().css({"opacity": "100"});
         }
         if (pwStrength(pw) == 0) {
             alert("密码少于6位");
             result = "false";
-            $("#pw").parent().css({"border": ".01em solid #f75555"});
+            $("#pw").parent().css({"border": ".05em solid #f75555"});
             $("#pw").parent().next().css({"opacity": "100"});
         }
         if (pw != pw_confirm) {
             alert("两次密码输入不同");
             result = "false";
-            $("#pw_confirm").parent().css({"border": ".01em solid #f75555"});
+            $("#pw_confirm").parent().css({"border": ".05em solid #f75555"});
             $("#pw_confirm").parent().next().css({"opacity": "100"});
         }
         if (result == "true") {
