@@ -64,7 +64,7 @@ window.onload = function submitComment() {
             }
         },
         error: function () {
-            alert("请求出错！");
+            console.log("请求出错！");
         }
     });
 }

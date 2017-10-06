@@ -1,0 +1,167 @@
+body,html{margin:0;padding:0;width:100%;}
+.main{height:100%;width:100%;font-size:18px;border-top: .01em solid transparent;background: radial-gradient(#fef0ef 15%,white 0) center center repeat;
+    background-size: 1em 1em;}
+
+/*的主页面*/
+.content{
+    height: 100vh;
+    width: 100vw;
+    background: #ececea;
+    float: left;
+    display: inline-block;
+}
+
+/*各个面板*/
+.content-panels{
+    width: 100%;
+    max-width: 1100px;
+    margin: 6.5em auto 0;
+}
+.content-panels-line{
+    display: flex;
+    display: -webkit-flex;
+            flex-direction: row;
+    -webkit-flex-direction: row;
+            align-content: space-between;
+    -webkit-align-content: space-between;
+}
+.guidance-line{
+    height: 4em;
+}
+.other-line{
+    margin: .8em 0 0 0;
+    height: 30em;
+}
+.content-panel{
+    background: white;
+    border-radius: .5em;
+    height: 100%;
+            flex: 1;
+    -webkit-flex: 1;
+}
+.content-panel-items{
+    width: 15em;
+    background: white;
+    border-radius: .5em;
+    height: 100%;
+    margin: 0 0 0 .8em;
+}
+
+/*panel1 导航栏的面板样式*/
+.guidance-panel{
+            display: flex;
+    display: -webkit-flex;
+            flex-direction: row;
+    -webkit-flex-direction: row;
+            align-items: center;
+    -webkit-align-items: center;
+            justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+}
+.guidance-item{
+    position: relative;
+    width: 8.3em;
+    height: 3.2em;
+    line-height: 3.2em;
+    margin:0 0 0 2em;
+    cursor: pointer;
+}
+.guidance-item-shows{
+    display: block;
+    position: relative;
+    border-radius: .2em .2em 0 0;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    z-index: 2;
+    background: white;
+}
+.guidance-item-show-name{
+    position: relative;
+    height: 100%;
+    width: 6em;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2em;
+}
+.guidance-item-show-flag{
+    position: relative;
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0 0 0 .4em;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/bottom-tri.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+.guidance-item-name{
+    text-align: right;
+}
+.guidance-item-name-en{
+    font-size: 80%;
+}
+.guidance-item-hidden{
+    background: white;
+    width: 12em;
+    position: relative;
+    border: 1px solid #ccc;
+    top: -1px;
+    z-index: 1;
+    border-radius: 0 .2em .2em .2em;
+}
+.guidance-item-hidden-item{
+    line-height: 1.8em;
+    height: 1.8em;
+}
+.guidance-item-hidden-item-flag{
+    display: inline-block;
+    line-height: 1.3em;
+    height: 1.3em;
+    width: 1.5em;
+    background: url("../img/check_off.png") center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin: 0 0 0 1.3em;
+}
+.guidance-item-hidden-item-content{
+    display: inline-block;
+    line-height: 1.8em;
+    height: 1.8em;
+    vertical-align: middle;
+    margin: 0 0 0 .3em;
+}
+.guidance-item-hidden-item-en{
+    line-height: 1em;
+    height: 1em;
+}
+.guidance-item-hidden-item-flag-en{
+    display: inline-block;
+    line-height: 1em;
+    height: 1em;
+    width: 1.7em;
+    background: url("../img/check_off.png") center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin: 0 0 0 1.3em;
+    visibility: hidden;
+}
+.guidance-item-hidden-item-content-en{
+    display: inline-block;
+    line-height: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin: 0 0 0 .3em;
+    position: relative;
+    top: -.5em;
+    left: -.1em;
+    font-size: 80%;
+}
+.verify-button{
+    color: white;
+    background: #f75555;
+    border-radius: .5em;
+    margin: 1em auto;
+    width: 5em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}

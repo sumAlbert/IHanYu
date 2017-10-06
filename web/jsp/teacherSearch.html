@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>爱汉语</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../res/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/teacherSearch.css">
+</head>
+<body>
+    <div class="head" id="head1">
+    <div class="space-image space-row"></div>
+    <div class="image"></div>
+    <div class="image-space-items space-row"></div>
+    <div class="items">
+        <div class="item">首页<br/>Home</div>
+        <div class="item">汉语教师<br/>Chinese Teacher</div>
+        <div class="item">语伴<br/>Language Partner</div>
+    </div>
+    <div class="items-space-login-regist space-row"></div>
+    <div class="login-regist">
+        <div class="login-regist-item" id="login">登录<br/>Login</div>
+        <div class="login-regist-item" id="regist">注册<br/>Regist</div>
+        <div class="user">
+            <img class="user_head" src='<%=session.getAttribute("headp")%>'>
+            <div class="user_name"><%=session.getAttribute("username")%></div>
+        </div>
+        <div class="user_item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人中心</div>
+        <div class="user_item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首页</div>
+        <div class="user_item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教师</div>
+        <div class="user_item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语伴</div>
+        <div class="user_item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出</div>
+    </div>
+    <div class="login-regist-space space-row"></div>
+</div>
+    <div class="content">
+        <div class="content-panels">
+            <div class="content-panels-line guidance-line">
+                <div class="content-panel guidance-panel">
+                    <div class="guidance-item">
+                        <div class="guidance-item-shows">
+                            <div class="guidance-item-show-name">
+                                <div class="guidance-item-name">汉语等级</div>
+                                <div class="guidance-item-name guidance-item-name-en">Chinese Level</div>
+                            </div><!--
+                            --><div class="guidance-item-show-flag"></div>
+                        </div>
+                        <div class="guidance-item-hidden">
+                            <div class="guidance-item-hidden-box">
+                                <div class="guidance-item-hidden-item">
+                                    <div class="guidance-item-hidden-item-flag"></div>
+                                    <div class="guidance-item-hidden-item-content">初级</div>
+                                </div>
+                                <div class="guidance-item-hidden-item-en">
+                                    <div class="guidance-item-hidden-item-flag-en"></div>
+                                    <div class="guidance-item-hidden-item-content-en">Beginning</div>
+                                </div>
+                                <div class="guidance-item-hidden-item">
+                                    <div class="guidance-item-hidden-item-flag"></div>
+                                    <div class="guidance-item-hidden-item-content">初中级</div>
+                                </div>
+                                <div class="guidance-item-hidden-item-en">
+                                    <div class="guidance-item-hidden-item-flag-en"></div>
+                                    <div class="guidance-item-hidden-item-content-en">Beginning High</div>
+                                </div>
+                                <div class="guidance-item-hidden-item">
+                                    <div class="guidance-item-hidden-item-flag"></div>
+                                    <div class="guidance-item-hidden-item-content">中级</div>
+                                </div>
+                                <div class="guidance-item-hidden-item-en">
+                                    <div class="guidance-item-hidden-item-flag-en"></div>
+                                    <div class="guidance-item-hidden-item-content-en">intermediate</div>
+                                </div>
+                                <div class="guidance-item-hidden-item">
+                                    <div class="guidance-item-hidden-item-flag"></div>
+                                    <div class="guidance-item-hidden-item-content">中高级</div>
+                                </div>
+                                <div class="guidance-item-hidden-item-en">
+                                    <div class="guidance-item-hidden-item-flag-en"></div>
+                                    <div class="guidance-item-hidden-item-content-en">intermediate high</div>
+                                </div>
+                                <div class="guidance-item-hidden-item">
+                                    <div class="guidance-item-hidden-item-flag"></div>
+                                    <div class="guidance-item-hidden-item-content">高级</div>
+                                </div>
+                                <div class="guidance-item-hidden-item-en">
+                                    <div class="guidance-item-hidden-item-flag-en"></div>
+                                    <div class="guidance-item-hidden-item-content-en">advance</div>
+                                </div>
+                            </div>
+                            <div class="verify-button">OK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-panels-line other-line">
+                <div class="content-panel"></div>
+                <div class="content-panel-items"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../res/js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../res/js/teacherSearch.js"></script>
+<script type="text/javascript" src="../res/js/header.js"></script>
+</html>
