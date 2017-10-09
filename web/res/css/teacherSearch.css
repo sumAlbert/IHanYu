@@ -30,7 +30,7 @@ body,html{margin:0;padding:0;width:100%;}
 }
 .other-line{
     margin: .8em 0 0 0;
-    height: 30em;
+    height: 32em;
 }
 .content-panel{
     background: white;
@@ -100,6 +100,7 @@ body,html{margin:0;padding:0;width:100%;}
     font-size: 80%;
 }
 .guidance-item-hidden{
+    display: none;
     background: white;
     width: 12em;
     position: relative;
@@ -164,4 +165,100 @@ body,html{margin:0;padding:0;width:100%;}
     height: 2em;
     line-height: 2em;
     text-align: center;
+}
+
+
+/*教师列表部分*/
+.content-panel-teacher-item{
+    line-height: 5em;
+    height: 5em;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+.content-panel-teacher-item:hover{
+    background: hsla(0,0%,96%,.5);
+    cursor: pointer;
+}
+.content-panel-teacher-box{
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: 1px solid #ddd;
+}
+.teacher-item-avatar{
+    height: 3em;
+    width: 3em;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50% 50%;
+    overflow: hidden;
+}
+.teacher-item-avatar > img{
+    height: 100%;
+    width: 100%;
+}
+.teacher-infos-1{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5em;
+    width: 5.5em;
+}
+.teacher-infos-2{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5em;
+    width: 3.5em;
+}
+.teacher-info{
+    text-align: center;
+}
+.teacher-info-en{
+    font-size: 72%;
+}
+
+
+/*翻页部分*/
+.page-control-box{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: center;
+    -webkit-justify-content: center;
+    height: 2em;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.last-page{
+    height: 1em;
+    width: 1em;
+    margin: 0 2em 0 0;
+    background: url("../img/last-page.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+.next-page{
+    height: 1em;
+    width: 1em;
+    margin: 0 0 0 2em;
+    background: url("../img/next-page.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+.input-box{
+    height: 1em;
+    line-height: 1em;
+    width: 1em;
+    border: 1px solid #ddd;
+    position: relative;
+    top: 1px;
+}
+.input-box > input{
+    vertical-align: middle;
+    padding: 0;
+    outline: none;
+    height: 100%;
+    line-height: 1em;
+    float: left;
+    width: 100%;
+    border: none;
+    position: relative;
 }
