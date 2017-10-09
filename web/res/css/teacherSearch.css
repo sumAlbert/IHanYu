@@ -70,9 +70,9 @@ body,html{margin:0;padding:0;width:100%;}
     display: block;
     position: relative;
     border-radius: .2em .2em 0 0;
-    border: 1px solid #ccc;
+    border: 1px solid transparent;
     border-bottom: none;
-    z-index: 2;
+    z-index: 0;
     background: white;
 }
 .guidance-item-show-name{
@@ -92,6 +92,9 @@ body,html{margin:0;padding:0;width:100%;}
     vertical-align: middle;
     background: url("../img/bottom-tri.png") center center no-repeat;
     background-size: 100% 100%;
+    transition:all .5s;
+    -webkit-transition:all .5s;
+    transform:rotate(0deg);
 }
 .guidance-item-name{
     text-align: right;
@@ -261,4 +264,21 @@ body,html{margin:0;padding:0;width:100%;}
     width: 100%;
     border: none;
     position: relative;
+}
+
+/*地图部分样式*/
+.map-panel{
+    display: flex;
+    display: -webkit-flex;
+            flex-direction: row;
+    -webkit-flex-direction: row;
+            justify-content: center;
+    -webkit-justify-content: center;
+            align-items: center;
+    -webkit-align-items: center;;
+}
+.map-content{
+    display: block;
+    width: 95%;
+    height: 90%;
 }
