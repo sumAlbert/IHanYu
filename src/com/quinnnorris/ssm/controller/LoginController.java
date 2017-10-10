@@ -80,4 +80,16 @@ public class LoginController {
         return baseJson;
     }
 
+
+    //测试用，勿删
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseJson test(@RequestParam String tag_info, @RequestParam String page,
+                         HttpSession httpSession) {
+        System.out.println(page);
+        BaseJson baseJson = new BaseJson();
+        baseJson.setErrorCode("0000");
+        return baseJson;
+    }
+
 }

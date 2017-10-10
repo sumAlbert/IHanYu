@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    var tags=[];
+    var tag_info={}; //记录标签信息
+    var now_page=0;
+    var lng=
 
     //移动到标签选择按钮上
     $(".guidance-item").hover(function () {
@@ -16,7 +18,6 @@ $(document).ready(function () {
     $(".guidance-item-hidden-item").click(function () {
         var value=$(this).find(".guidance-item-hidden-item-flag").attr("value");
         if(value=="false"){
-            console.log(true);
             $(this).find(".guidance-item-hidden-item-flag").attr("value","true");
             $(this).find(".guidance-item-hidden-item-flag").css({"background": "url('../res/img/check_on.png') center center no-repeat","background-size": "100% 100%"});
         }
@@ -33,8 +34,71 @@ $(document).ready(function () {
         $(this).find(".guidance-item-shows").css({"border":"1px solid transparent","z-index":"0"});
         $(this).find(".guidance-item-show-flag").css({"background": "url('../res/img/bottom-tri.png') center center no-repeat","background-size": "100% 100%","transform":"rotate(0deg)"});
         $(".guidance-item-hidden-item").each(function () {
-            console.log($(this).attr("id"));
-            console.log($(this).find(".guidance-item-hidden-item-flag").attr("value"));
+            var tag_id=$(this).attr("id");
+            tag_info[tag_id]=$(this).find(".guidance-item-hidden-item-flag").attr("value");
         });
+        searchTeacher();
     });
+
+    //输入页码切换页面
+    $("#page-num").keypress(function (event) {
+        if(event.keyCode==13){
+            var page_input=$("#page-num").val();
+            var sum_page=$(".page-num").attr("value");
+            if(!isNaN(page_input)){
+                if(page_input>0&&page_input<=sum_page){
+                    now_page=page_input;
+                    searchTeacher();
+                }
+            }
+        }
+    });
+
+    //上下翻页
+    $(".last-page").click(function () {
+        var page_input=$("#page-num").attr("value");
+        var sum_page=$(".page-num").attr("value");
+        console.log(page_input);
+        if(page_input>1&&page_input<=sum_page){
+            now_page=now_page-1;
+            $("#page-num").attr("value",now_page);
+            searchTeacher();
+        }
+    });
+    $(".next-page").click(function () {
+        var page_input=$("#page-num").attr("value");
+        var sum_page=$(".page-num").attr("value");
+        console.log(page_input);
+        if(page_input>=1&&page_input<sum_page){
+            now_page=now_page+1;
+            $("#page-num").attr("value",now_page);
+            // searchTeacher();
+        }
+    });
+
+
+    //TODO 传递页数和标签以后，返回成功后要执行的代码
+    function searchTeacher(){
+        $.ajax({
+            type: "post",
+            url: "/test",
+            timeout: 800000,
+            data : {
+                tag_info: JSON.stringify(tag_info),
+                page: now_page
+            },
+            success : function (data) {
+                console.log("success");
+            },
+            error : function() {
+                console.log("error")
+            }
+        })
+    }
+
+    function switchMap(){
+        $.ajax({
+
+        })
+    }
 });
