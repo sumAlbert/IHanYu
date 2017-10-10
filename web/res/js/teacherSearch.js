@@ -1,7 +1,8 @@
 $(document).ready(function () {
     var tag_info={}; //记录标签信息
     var now_page=0;
-    var lng=
+
+
 
     //移动到标签选择按钮上
     $(".guidance-item").hover(function () {
@@ -59,7 +60,7 @@ $(document).ready(function () {
         var page_input=$("#page-num").attr("value");
         var sum_page=$(".page-num").attr("value");
         console.log(page_input);
-        if(page_input>1&&page_input<=sum_page){
+        if(page_input-0>1&&page_input-0<=sum_page-0){
             now_page=now_page-1;
             $("#page-num").attr("value",now_page);
             searchTeacher();
@@ -68,16 +69,22 @@ $(document).ready(function () {
     $(".next-page").click(function () {
         var page_input=$("#page-num").attr("value");
         var sum_page=$(".page-num").attr("value");
-        console.log(page_input);
-        if(page_input>=1&&page_input<sum_page){
+        if(page_input-0>=1&&page_input-0<sum_page-0){
             now_page=now_page+1;
             $("#page-num").attr("value",now_page);
-            // searchTeacher();
+            searchTeacher();
         }
     });
 
 
+
+
     //TODO 传递页数和标签以后，返回成功后要执行的代码
+    /**
+     * url  （待定）
+     * tag_info String 标签是否被选中的信息
+     * page int 当前页码
+     */
     function searchTeacher(){
         $.ajax({
             type: "post",
@@ -88,17 +95,14 @@ $(document).ready(function () {
                 page: now_page
             },
             success : function (data) {
-                console.log("success");
+                console.log(data.errorCode);
             },
             error : function() {
                 console.log("error")
             }
         })
     }
-
-    function switchMap(){
-        $.ajax({
-
-        })
+    resizeInfo=function(data){
+        console.log(data);
     }
 });
