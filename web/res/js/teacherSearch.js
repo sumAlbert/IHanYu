@@ -98,7 +98,7 @@ $(document).ready(function () {
                 console.log(data.errorCode);
             },
             error : function() {
-                console.log("error")
+                console.log("serror")
             }
         })
     }
