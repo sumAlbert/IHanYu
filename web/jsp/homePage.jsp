@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +44,7 @@
                 <img class="user_head" src='<%=session.getAttribute("headp")%>'>
                 <div class="user_name"><%=session.getAttribute("username")%></div>
             </div>
-            <div class="user_item"
+            <div class="user_item_transparent"
                  onclick="changePerson('<%=session.getAttribute("usertype")%>','<%=session.getAttribute("email")%>')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人中心
             </div>
             <div class="user_item_transparent" onclick="loginOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出</div>
@@ -51,7 +52,7 @@
     </div>
     <div class="content">
         <div class="page1">
-            <div class="page1-head1">这里，你能找到</div>
+            <div class="page1-head1">这里，你能找到 </div>
             <div class="page1-head2">Here , You can get</div>
             <div class="page1-buttons">
                 <div class="page1-button ">中文教师<br/>Chinese tutor</div>
@@ -62,6 +63,18 @@
             <div class="page2-head1">语伴推荐</div>
             <div class="page2-head2">Recomended Partner</div>
             <div class="page2-hidden-list">
+                <c:forEach begin="0" end="7" var="test">
+                    <div class="page2-hidden-item" onclick="changePartner('')">
+                        <div class="page2-hidden-item-image">
+                            <img src=''>
+                        </div>
+                        <div class="page2-hidden-name">&nbsp; userName</div>
+                        <div class="page2-hidden-C">&nbsp;我说：汉语</div>
+                        <div class="page2-hidden-E">&nbsp;I speak : Chinese</div>
+                        <div class="page2-hidden-C">&nbsp;学习：英语</div>
+                        <div class="page2-hidden-E">&nbsp;I learn : English</div>
+                    </div>
+                </c:forEach>
                 <%--<s:iterator value="partnerList" id="pl" begin="0" status="st">
                     <s:if test="#st.index<8">
                         <div class="page2-hidden-item" onclick="changePartner('
@@ -81,8 +94,19 @@
                                     value="#pl.getPartnerLanguage().getLanguage_e()"></s:property></div>
                         </div>
                     </s:if>
-                    23
                 </s:iterator>--%>
+                <c:forEach begin="0" end="7" var="test">
+                    <div class="page2-hidden-item" onclick="changePartner('')">
+                        <div class="page2-hidden-item-image">
+                            <img src=''>
+                        </div>
+                        <div class="page2-hidden-name">&nbsp; userName</div>
+                        <div class="page2-hidden-C">&nbsp;我说：汉语</div>
+                        <div class="page2-hidden-E">&nbsp;I speak : Chinese</div>
+                        <div class="page2-hidden-C">&nbsp;学习：英语</div>
+                        <div class="page2-hidden-E">&nbsp;I learn : English</div>
+                    </div>
+                </c:forEach>
             </div>
             <div class="page2-foot2">More</div>
             <div class="page2-extra"><p>+</p></div>
@@ -91,9 +115,11 @@
             <div class="page2-head1">语伴推荐</div>
             <div class="page2-head2">Recomended Partner</div>
             <div class="page2-hidden-list">
-                <s:iterator value="partnerList" id="pl" begin="8" status="st">
+
+                <%--<s:iterator value="partnerList" id="pl" begin="8" status="st">
                     <s:if test="#st.index<12">
-                        <div class="page2-hidden-item" onclick="changePartner('<s:property value="#pl.getId()"></s:property>')">
+                        <div class="page2-hidden-item" onclick="changePartner('
+                            <s:property value="#pl.getId()"></s:property> ')">
                             <div class="page2-hidden-item-image">
                                 <img src='<s:property value="#pl.userAvatar()"></s:property>'>
                             </div>
@@ -109,13 +135,27 @@
                                     value="#pl.getPartnerLanguage().getLanguage_e()"></s:property></div>
                         </div>
                     </s:if>
-                </s:iterator>
+                </s:iterator>--%>
             </div>
         </div>
         <div class="page3">
             <div class="page3-head1">教师推荐</div>
             <div class="page3-head2">Recomend Teacher</div>
             <div class="teacher-list" id="teacher-list">
+                <c:forEach begin="0" end="3" var="tag">
+                    <div class="teacher-list-item" onclick="changeTeacher('')">
+                        <div class="teacher-item-img">
+                            <div class="cloth-screen"></div>
+                            <img src=''/>
+                        </div>
+                        <div class="teacher-item-name"></div>
+                        <div class="teacher-item-kill">
+                            <c:forEach begin="0" end="2" var="test">
+                                <div class="skill-item">啦啦啦</div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </c:forEach>
                 <%--<s:iterator value="teacherList" begin="0" end="3" id="tl">
                     <div class="teacher-list-item"
                          onclick="changeTeacher('<s:property value="#tl.getId()"></s:property>')">
@@ -136,6 +176,20 @@
             </div>
         </div>
         <div class="teacher-list teacher-list-extra">
+            <c:forEach begin="0" end="7" var="tag">
+                <div class="teacher-list-item" onclick="changeTeacher('')">
+                    <div class="teacher-item-img">
+                        <div class="cloth-screen"></div>
+                        <img src=''/>
+                    </div>
+                    <div class="teacher-item-name"></div>
+                    <div class="teacher-item-kill">
+                        <c:forEach begin="0" end="2" var="test">
+                            <div class="skill-item">啦啦啦</div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </c:forEach>
             <%--<s:iterator value="teacherList" begin="4" id="tl">
                 <div class="teacher-list-item" onclick="changeTeacher('<s:property value="#tl.getId()"></s:property>')">
                     <div class="teacher-item-img">
