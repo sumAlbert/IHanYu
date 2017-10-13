@@ -93,7 +93,8 @@
             <div class="page2-hidden-list">
                 <s:iterator value="partnerList" id="pl" begin="8" status="st">
                     <s:if test="#st.index<12">
-                        <div class="page2-hidden-item" onclick="changePartner('<s:property value="#pl.getId()"></s:property>')">
+                        <div class="page2-hidden-item" onclick="changePartner('
+                            <s:property value="#pl.getId()"></s:property>
                             <div class="page2-hidden-item-image">
                                 <img src='<s:property value="#pl.userAvatar()"></s:property>'>
                             </div>
