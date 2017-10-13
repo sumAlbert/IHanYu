@@ -75,6 +75,8 @@
                         <div class="page2-hidden-E">&nbsp;I learn : English</div>
                     </div>
                 </c:forEach>
+
+
                 <%--<s:iterator value="partnerList" id="pl" begin="0" status="st">
                     <s:if test="#st.index<8">
                         <div class="page2-hidden-item" onclick="changePartner('
