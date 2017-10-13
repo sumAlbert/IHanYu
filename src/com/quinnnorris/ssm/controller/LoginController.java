@@ -84,9 +84,9 @@ public class LoginController {
     //测试用，勿删
     @RequestMapping(value = "/test", method = RequestMethod.POST)
     @ResponseBody
-    public BaseJson test(@RequestParam String lng, @RequestParam String lat,
+    public BaseJson test(@RequestParam String tag_info, @RequestParam String page,
                          HttpSession httpSession) {
-        System.out.println(lng);
+        System.out.println(tag_info);
         BaseJson baseJson = new BaseJson();
         baseJson.setErrorCode("0000");
         return baseJson;
