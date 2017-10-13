@@ -247,4 +247,5 @@
 </body>
 <script type="text/javascript" src="../res/js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="../res/js/homePage2.js"></script>
+
 </html>
