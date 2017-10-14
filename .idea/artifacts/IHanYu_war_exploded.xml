@@ -6,6 +6,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="IHanYu" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="servlet-api" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="IHanYu/web/Web" />
     </root>
