@@ -1,8 +1,6 @@
 $(document).ready(function () {
-    var lng=121.1111;
-    var lat=31.222;
 
-    var map = new AMap.Map("map", {
+    map = new AMap.Map("map", {
         resizeEnable: true,
         zoom: 10,
         city: '上海市',
@@ -32,7 +30,6 @@ $(document).ready(function () {
             },
             error : function() {
                 console.log("error");
-
             }
         })
     }

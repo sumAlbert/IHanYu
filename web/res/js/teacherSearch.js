@@ -103,6 +103,6 @@ $(document).ready(function () {
         })
     }
     resizeInfo=function(data){
-        console.log(data);
+        console.log(JSON.stringify(data));
     }
 });
