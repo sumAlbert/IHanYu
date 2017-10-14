@@ -107,17 +107,16 @@
             <div class="page3-head1">教师推荐</div>
             <div class="page3-head2">Recomend Teacher</div>
             <div class="teacher-list" id="teacher-list">
-                <c:forEach begin="0" end="3" var="tag">
+                <c:forEach var="tag" items="${listTea}">
                     <div class="teacher-list-item" onclick="changeTeacher('')">
                         <div class="teacher-item-img">
                             <div class="cloth-screen"></div>
-                            <img src=''/>
+                            <img src='${tag.headp}'/>
                         </div>
-                        <div class="teacher-item-name"></div>
+                        <div class="teacher-item-name">${tag.name}</div>
                         <div class="teacher-item-kill">
-                            <c:forEach begin="0" end="2" var="test">
-                                <div class="skill-item">啦啦啦</div>
-                            </c:forEach>
+                                <div class="skill-item">${tag.good1}</div>
+                                <div class="skill-item">${tag.good2}</div>
                         </div>
                     </div>
                 </c:forEach>
@@ -125,17 +124,16 @@
             </div>
         </div>
         <div class="teacher-list teacher-list-extra">
-            <c:forEach begin="0" end="7" var="tag">
+            <c:forEach begin="4" end="12" var="tag" items="${listTea}">
                 <div class="teacher-list-item" onclick="changeTeacher('')">
                     <div class="teacher-item-img">
                         <div class="cloth-screen"></div>
-                        <img src=''/>
+                        <img src='${tag.headp}'/>
                     </div>
-                    <div class="teacher-item-name"></div>
+                    <div class="teacher-item-name">${tag.name}</div>
                     <div class="teacher-item-kill">
-                        <c:forEach begin="0" end="2" var="test">
-                            <div class="skill-item">啦啦啦</div>
-                        </c:forEach>
+                        <div class="skill-item">${tag.good1}</div>
+                        <div class="skill-item">${tag.good2}</div>
                     </div>
                 </div>
             </c:forEach>

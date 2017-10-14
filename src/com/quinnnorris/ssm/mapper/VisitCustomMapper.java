@@ -26,4 +26,6 @@ public interface VisitCustomMapper {
     public LanguageCustom selectLangById(int firstL_id);
 
     public CountryCustom selectCountryById(int country_id);
+
+    public List<Tea_typeCustom> select2good(Tea_goodCustom tea_goodCustom);
 }

@@ -35,4 +35,8 @@
         SELECT * FROM partner limit 0,#{sum}
     </select>
 
+    <select id="selectTeacherin4" parameterType="int" resultType="TeacherCustom">
+        SELECT * FROM teacher limit 0,#{sum}
+    </select>
+
 </mapper>

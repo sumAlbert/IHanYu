@@ -34,5 +34,7 @@ public interface UserCustomMapper {
     public void insertPartnerFromReg(PartnerCustom partnerCustom);
 
     public List<PartnerCustom> selectPartnerin16(int sum);
+
+    public List<TeacherCustom> selectTeacherin4(int sum);
 }
 

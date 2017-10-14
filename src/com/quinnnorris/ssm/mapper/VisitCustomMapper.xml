@@ -22,4 +22,8 @@
         SELECT * FROM country WHERE id = #{int}
     </select>
 
+    <select id="select2good" parameterType="Tea_goodCustom" resultType="Tea_typeCustom">
+        SELECT type_cn,type_en FROM tea_good,tea_type WHERE tea_good.id = #{id} AND tea_good.goodat = tea_type.id limit 0,#{selectSum}
+    </select>
+
 </mapper>

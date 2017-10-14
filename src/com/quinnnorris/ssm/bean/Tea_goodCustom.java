@@ -10,4 +10,15 @@ package com.quinnnorris.ssm.bean;
  * @version: 1.0
  */
 public class Tea_goodCustom extends Tea_good {
+
+    private int selectSum;
+
+    public int getSelectSum() {
+        return selectSum;
+    }
+
+    public void setSelectSum(int selectSum) {
+        this.selectSum = selectSum;
+    }
+
 }

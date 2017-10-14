@@ -1,9 +1,6 @@
 package com.quinnnorris.ssm.service.impl;
 
-import com.quinnnorris.ssm.bean.LanguageCustom;
-import com.quinnnorris.ssm.bean.PartnerCustom;
-import com.quinnnorris.ssm.bean.StudentCustom;
-import com.quinnnorris.ssm.bean.UserCustom;
+import com.quinnnorris.ssm.bean.*;
 import com.quinnnorris.ssm.mapper.LoginCustomMapper;
 import com.quinnnorris.ssm.mapper.UserCustomMapper;
 import com.quinnnorris.ssm.mapper.VisitCustomMapper;
@@ -83,7 +80,29 @@ public class HomeServiceImpl implements HomeService {
 
     @Override
     public BaseJson getTeacher4(Model model) {
-
+        List<TeacherCustom> list = userCustomMapper.selectTeacherin4(12);
+        List<Map<String, String>> mapList = new ArrayList<>();
+        for (TeacherCustom teacherCustom : list) {
+            Map<String, String> map = new HashMap<>();
+            Tea_goodCustom tea_goodCustom = new Tea_goodCustom();
+            tea_goodCustom.setId(teacherCustom.getId());
+            tea_goodCustom.setSelectSum(2);
+            List<Tea_typeCustom> tea2good = visitCustomMapper.select2good(tea_goodCustom);
+            map.put("name", teacherCustom.getFirstname() + teacherCustom.getLastname());
+            if (tea2good.get(1) != null) map.put("good1", tea2good.get(0).getType_cn());
+            else map.put("good1", "");
+            if (tea2good.get(1) != null) map.put("good2", tea2good.get(1).getType_cn());
+            else map.put("good2", "");
+            UserCustom userCustom = new UserCustom();
+            userCustom.setId(teacherCustom.getId());
+            UserCustom user = loginCustomMapper.selectUserById(userCustom);
+            map.put("headp", user.getHeadp());
+            mapList.add(map);
+        }
+        model.addAttribute("listTea", mapList);
+        BaseJson baseJson = new BaseJson();
+        baseJson.setObject(mapList);
+        return baseJson;
     }
 
 }
