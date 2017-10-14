@@ -93,6 +93,12 @@
                         </div>
                     </div>
                     <div class="info-st-line">
+                        <div class="info-st-line-left">英文名</br>English Name</div>
+                        <div class="info-input-box" id="english-input-box">
+                            <input name="englishName" id="English-Name" type="text" />
+                        </div>
+                    </div>
+                    <div class="info-st-line">
                         <div class="info-st-line-left">证件照片</br>Credentials</br>Picture</div>
                         <div class="info-st-line-right info-cerd-line">
                             <div class="info-cerd">
