@@ -2,8 +2,6 @@ $(document).ready(function () {
     var tag_info={}; //记录标签信息
     var now_page=0;
 
-
-
     //移动到标签选择按钮上
     $(".guidance-item").hover(function () {
         $(this).find(".guidance-item-hidden").show();
@@ -75,9 +73,6 @@ $(document).ready(function () {
             searchTeacher();
         }
     });
-
-
-
 
     //TODO 传递页数和标签以后，返回成功后要执行的代码
     /**
