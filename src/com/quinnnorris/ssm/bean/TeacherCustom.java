@@ -11,4 +11,19 @@ package com.quinnnorris.ssm.bean;
  */
 public class TeacherCustom extends Teacher {
 
+    private int startPos;
+    private int pageSize;
+
+    public int getStartPos() {
+        return startPos;
+    }
+
+    public void setStartPos(int startPos) {
+        this.startPos = startPos;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
 }

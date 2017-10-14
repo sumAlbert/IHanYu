@@ -8,6 +8,7 @@ import com.quinnnorris.ssm.service.VisitService;
 import com.quinnnorris.ssm.util.BaseJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.HashMap;
 import java.util.List;
@@ -136,6 +137,36 @@ public class VisitServiceImpl implements VisitService {
             baseJson.setObject(selectRes.get(0));
         else
             baseJson.setObject(null);
+        return baseJson;
+    }
+
+    @Override
+    public BaseJson setTeacherCount(Model model) {
+        int count = visitCustomMapper.selectTeacherCount();
+        if (count % 6 == 0) model.addAttribute("page", count / 6 + "");
+        else model.addAttribute("page", (count / 6 + 1) + "");
+        List<TeacherCustom> list = userCustomMapper.selectTeacherin4(6);
+        for (int i = 0; i < list.size(); i++) {
+
+            Map<String, String> map = new HashMap<>();
+            Tea_goodCustom tea_goodCustom = new Tea_goodCustom();
+            tea_goodCustom.setId(teacherCustom.getId());
+            tea_goodCustom.setSelectSum(2);
+            List<Tea_typeCustom> tea2good = visitCustomMapper.select2good(tea_goodCustom);
+            map.put("name", teacherCustom.getFirstname() + teacherCustom.getLastname());
+            if (tea2good.get(1) != null) map.put("good1", tea2good.get(0).getType_cn());
+            else map.put("good1", "");
+            if (tea2good.get(1) != null) map.put("good2", tea2good.get(1).getType_cn());
+            else map.put("good2", "");
+            UserCustom userCustom = new UserCustom();
+            userCustom.setId(teacherCustom.getId());
+            UserCustom user = loginCustomMapper.selectUserById(userCustom);
+            map.put("headp", user.getHeadp());
+            mapList.add(map);
+        }
+        model.addAttribute("listTea", mapList);
+        BaseJson baseJson = new BaseJson();
+        baseJson.setObject(mapList);
         return baseJson;
     }
 }

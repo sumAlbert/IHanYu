@@ -74,7 +74,7 @@ public class VisitController {
         map.put("good_en", ((String[]) baseJson2.getObject())[1] + "");
         map.put("time_cn", ((String[]) baseJson3.getObject())[0] + "");
         map.put("time_en", ((String[]) baseJson3.getObject())[1] + "");
-        map.put("headp",((UserCustom)baseJson4.getObject()).getHeadp());
+        map.put("headp", ((UserCustom) baseJson4.getObject()).getHeadp());
         model.addAllAttributes(map);
 
         return "teacherVisit";
@@ -112,8 +112,8 @@ public class VisitController {
         map.put("sex_en", custom.getSex_en());
         map.put("style", custom.getSelfIntro());
         map.put("self", custom.getSelfIntro());
-        map.put("username",baseJson2.getObject());
-        map.put("headp",((UserCustom)baseJson3.getObject()).getHeadp());
+        map.put("username", baseJson2.getObject());
+        map.put("headp", ((UserCustom) baseJson3.getObject()).getHeadp());
         model.addAllAttributes(map);
 
         return "partnerVisit";
@@ -142,9 +142,15 @@ public class VisitController {
     @RequestMapping("/homepage")
     public String hompageReturn(Model model) {
         BaseJson baseJson1 = homeServiceImpl.getType216(model);
-        BaseJson baseJson2 = homeServiceImpl.getUsernameHeadp(model,baseJson1);
+        BaseJson baseJson2 = homeServiceImpl.getUsernameHeadp(model, baseJson1);
         BaseJson baseJson3 = homeServiceImpl.getTeacher4(model);
         return "homePage";
+    }
+
+    @RequestMapping("/searchTeacher")
+    public String searchingTeacher(Model model) {
+        BaseJson baseJson = visitServiceImpl.setTeacherCount(model);
+        return "teacherSearch";
     }
 
 }

@@ -76,7 +76,7 @@ $(document).ready(function () {
         window.location.href = "/homepage";
     });
     $(".item").eq(1).click(function () {
-        window.location.href = "teacherSearch.action";
+        window.location.href = "/searchTeacher";
     });
     $(".item").eq(2).click(function () {
         window.location.href = "partnerSearch.action";
@@ -85,14 +85,14 @@ $(document).ready(function () {
         window.location.href = "/homepage";
     });
     $(".item-transparent").eq(1).click(function () {
-        window.location.href = "teacherSearch.action";
+        window.location.href = "/searchTeacher";
     });
     $(".item-transparent").eq(2).click(function () {
         window.location.href = "partnerSearch.action";
     });
     /*首页第一屏幕的两个按钮*/
     $(".page1-button").eq(0).click(function () {
-        window.location.href = "teacherSearch.action";
+        window.location.href = "/searchTeacher";
     });
     $(".page1-button").eq(1).click(function () {
         window.location.href = "partnerSearch.action";
