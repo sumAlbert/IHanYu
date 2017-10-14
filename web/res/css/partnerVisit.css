@@ -535,6 +535,7 @@ textarea{
     outline: none;
     margin: 0 auto;
     display: block;
+    padding: 0;
 }
 /*屏幕尺寸控制*/
 .right-frame > .person{
