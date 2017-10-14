@@ -18,7 +18,7 @@ $(document).ready(function () {
         window.location.href = "/homepage";
     });
     $(".item").eq(1).click(function () {
-        window.location.href = "teacherSearch.action";
+        window.location.href = "/searchTeacher";
     });
     $(".item").eq(2).click(function () {
         window.location.href = "partnerSearch.action";
@@ -28,7 +28,7 @@ $(document).ready(function () {
         window.location.href = "/homepage";
     });
     $(".user_item").eq(2).click(function () {
-        window.location.href = "teacherSearch.action";
+        window.location.href = "/searchTeacher";
     });
     $(".user_item").eq(3).click(function () {
         window.location.href = "partnerSearch.action";

@@ -113,7 +113,7 @@
                             <div class="cloth-screen"></div>
                             <img src='${tag.headp}'/>
                         </div>
-                        <div class="teacher-item-name">${tag.name}</div>
+                        <div class="teacher-item-name" ><p id="isnulls">${tag.name}</p>></div>
                         <div class="teacher-item-kill">
                                 <div class="skill-item">${tag.good1}</div>
                                 <div class="skill-item">${tag.good2}</div>
@@ -179,5 +179,8 @@
 </body>
 <script type="text/javascript" src="../res/js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="../res/js/homePage2.js"></script>
-
+<script type="text/javascript">
+    if($("#isnulls").text() == "")
+        window.location.href = "/homepage";
+</script>
 </html>

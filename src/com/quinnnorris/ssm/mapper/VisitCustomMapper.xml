@@ -26,4 +26,8 @@
         SELECT type_cn,type_en FROM tea_good,tea_type WHERE tea_good.id = #{id} AND tea_good.goodat = tea_type.id limit 0,#{selectSum}
     </select>
 
+    <select id="selectTeacherCount" resultType="int">
+        SELECT count(*) FROM teacher
+    </select>
+
 </mapper>

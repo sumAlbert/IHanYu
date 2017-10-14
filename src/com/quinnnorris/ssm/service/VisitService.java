@@ -2,6 +2,7 @@ package com.quinnnorris.ssm.service;
 
 import com.quinnnorris.ssm.bean.*;
 import com.quinnnorris.ssm.util.BaseJson;
+import org.springframework.ui.Model;
 
 /**
  * Title: VisitService
@@ -27,5 +28,7 @@ public interface VisitService {
     public BaseJson getStudentMessage(StudentCustom studentCustom);
 
     public BaseJson getUserMes(UserCustom userCustom);
+
+    public BaseJson setTeacherCount(Model model);
 }
 
