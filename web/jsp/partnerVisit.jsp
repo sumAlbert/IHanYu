@@ -39,33 +39,59 @@
     </div>
     <div class="content">
         <div class="main-frame">
-            <div class="header-frame">
-                <div class="avatar-block"></div>
-                <div class="avatar-info">
-                    <div class="avatar-info-left">
-                        <div class="avatar"><img src="${headp}" height=159" width="159"/></div>
-                        <div class="avatar-info-items">
-                            <div class="avatar-info-item">
-                                <span class="avatar-info-num">0</span></br><span class="avatar-info-name">点赞</span>
-                            </div><!--
-							-->
-                            <div class="avatar-info-item">
+            <%--<div class="header-frame">--%>
+                <%--<div class="avatar-block"></div>--%>
+                <%--<div class="avatar-info">--%>
+                    <%--<div class="avatar-info-left">--%>
+                        <%--<div class="avatar"><img src="${headp}" height=159" width="159"/></div>--%>
+                        <%--<div class="avatar-info-items">--%>
+                            <%--<div class="avatar-info-item">--%>
+                                <%--<span class="avatar-info-num">0</span></br><span class="avatar-info-name">点赞</span>--%>
+                            <%--</div><!----%>
+							<%---->--%>
+                            <%--<div class="avatar-info-item">--%>
+                                <%--<span class="avatar-info-num">0</span></br><span class="avatar-info-name">关注</span>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="avatar-info-right">--%>
+                        <%--<div class="username">${username}--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="avatar-extra">--%>
+                    <%--<div class="header-fun">--%>
+                        <%--<div class="focus-fun"></div>--%>
+                        <%--<div class="phrase-fun"></div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+                <div class="header-frame">
+                    <div class="avatar-block"></div>
+                    <div class="avatar-info">
+                        <div class="avatar-info-left">
+                            <div class="avatar"></div>
+                            <div class="avatar-info-items">
+                                <div class="avatar-info-item">
+                                    <span class="avatar-info-num">0</span></br><span class="avatar-info-name">点赞</span>
+                                </div><!--
+							--><div class="avatar-info-item">
                                 <span class="avatar-info-num">0</span></br><span class="avatar-info-name">关注</span>
                             </div>
+                            </div>
+                        </div>
+                        <div class="avatar-info-right">
+                            <div class="username">${username}</div>
+                            <div class="change-info">账号设置</div>
                         </div>
                     </div>
-                    <div class="avatar-info-right">
-                        <div class="username">${username}
+                    <div class="avatar-extra">
+                        <div class="header-fun">
+                            <div class="focus-fun"></div>
+                            <div class="phrase-fun"></div>
                         </div>
                     </div>
                 </div>
-                <div class="avatar-extra">
-                    <div class="header-fun">
-                        <div class="focus-fun"></div>
-                        <div class="phrase-fun"></div>
-                    </div>
-                </div>
-            </div>
             <div class="content-frame">
                 <div class="left-frame">
                     <div class="card person">
