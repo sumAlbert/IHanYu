@@ -219,16 +219,6 @@
 <script type="text/javascript" src="../res/js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="../res/js/header.js"></script>
 <script type="text/javascript" src="../res/js/partnerVisit.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".avatar").css({
-            'background': 'url(${headp}) center center no-repeat',
-            'background-size': '90% 90%'
-        });
-    });
-    var lng =${student.lng};
-    var lat =${student.lat};
-</script>
 <script type="text/javascript" src="../res/js/visitMap.js"></script>
 <script src="http://webapi.amap.com/maps?v=1.3&key=dc7c0b9b229db77d6ce083ece94031e4&callback=init"></script>
 </html>
