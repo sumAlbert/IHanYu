@@ -32,5 +32,7 @@ public interface UserCustomMapper {
     public void insertStudentFromReg(StudentCustom studentCustom);
 
     public void insertPartnerFromReg(PartnerCustom partnerCustom);
+
+    public List<PartnerCustom> selectPartnerin16(int sum);
 }
 

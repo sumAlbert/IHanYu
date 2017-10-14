@@ -30,5 +30,9 @@
     <insert id="insertPartnerFromReg" parameterType="PartnerCustom">
         INSERT INTO partner VALUE (#{id},#{firstL_id},#{secondL_id},#{sex},#{psex},#{selfIntro},#{isStudent},#{university})
     </insert>
+    
+    <select id="selectPartnerin16" parameterType="int" resultType="PartnerCustom">
+        SELECT * FROM partner limit 0,#{sum}
+    </select>
 
 </mapper>

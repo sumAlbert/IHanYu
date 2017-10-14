@@ -6,7 +6,6 @@ $(document).ready(function () {
     $("#head1").hide();
     $(".teacher-list-extra").hide();
 
-
     /*控制用户名的信息以及注销等*/
     $(".login-regist").eq(0).hover(
         function () {

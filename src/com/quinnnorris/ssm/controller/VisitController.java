@@ -1,6 +1,7 @@
 package com.quinnnorris.ssm.controller;
 
 import com.quinnnorris.ssm.bean.*;
+import com.quinnnorris.ssm.service.impl.HomeServiceImpl;
 import com.quinnnorris.ssm.service.impl.LoginServiceImpl;
 import com.quinnnorris.ssm.service.impl.VisitServiceImpl;
 import com.quinnnorris.ssm.util.BaseJson;
@@ -32,6 +33,9 @@ public class VisitController {
 
     @Autowired
     LoginServiceImpl loginServiceImpl;
+
+    @Autowired
+    HomeServiceImpl homeServiceImpl;
 
     @RequestMapping("/teacherVisit/{email:.+}")
     public String teacherVisitUser(@PathVariable String email, Model model, HttpSession httpSession) {
@@ -137,7 +141,9 @@ public class VisitController {
 
     @RequestMapping("/homepage")
     public String hompageReturn(Model model) {
-
+        BaseJson baseJson1 = homeServiceImpl.getType216(model);
+        BaseJson baseJson2 = homeServiceImpl.getUsernameHeadp(model,baseJson1);
+        BaseJson baseJson3 = homeServiceImpl.getTeacher4(model);
         return "homePage";
     }
 

@@ -14,4 +14,8 @@
         SELECT * FROM student WHERE id = #{id}
     </select>
 
+    <select id="selectUserById" parameterType="UserCustom" resultType="UserCustom">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
 </mapper>

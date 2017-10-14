@@ -26,4 +26,6 @@ public interface LoginCustomMapper {
 
     public List<StudentCustom> selectStudentById(StudentCustom studentCustom);
 
+    public UserCustom selectUserById(UserCustom userCustom);
+
 }

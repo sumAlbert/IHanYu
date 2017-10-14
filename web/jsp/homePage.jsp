@@ -22,10 +22,12 @@
             <div class="login-regist-item" id="regist">注册<br/>Regist</div>
             <div class="user">
                 <img class="user_head" src='<%=session.getAttribute("headp")%>'>
-                <div class="user_name"><%=session.getAttribute("username")%></div>
+                <div class="user_name"><%=session.getAttribute("username")%>
+                </div>
             </div>
             <div class="user_item"
-                 onclick="changePerson('<%=session.getAttribute("usertype")%>','<%=session.getAttribute("email")%>')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人中心
+                 onclick="changePerson('<%=session.getAttribute("usertype")%>','<%=session.getAttribute("email")%>')">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人中心
             </div>
             <div class="user_item" onclick="loginOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出</div>
         </div>
@@ -42,17 +44,19 @@
             <div class="login-regist-item-transparent" id="regist2">注册<br/>Regist</div>
             <div class="user">
                 <img class="user_head" src='<%=session.getAttribute("headp")%>'>
-                <div class="user_name"><%=session.getAttribute("username")%></div>
+                <div class="user_name"><%=session.getAttribute("username")%>
+                </div>
             </div>
             <div class="user_item_transparent"
-                 onclick="changePerson('<%=session.getAttribute("usertype")%>','<%=session.getAttribute("email")%>')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人中心
+                 onclick="changePerson('<%=session.getAttribute("usertype")%>','<%=session.getAttribute("email")%>')">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人中心
             </div>
             <div class="user_item_transparent" onclick="loginOut()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出</div>
         </div>
     </div>
     <div class="content">
         <div class="page1">
-            <div class="page1-head1">这里，你能找到 </div>
+            <div class="page1-head1">这里，你能找到</div>
             <div class="page1-head2">Here , You can get</div>
             <div class="page1-buttons">
                 <div class="page1-button ">中文教师<br/>Chinese tutor</div>
@@ -63,48 +67,29 @@
             <div class="page2-head1">语伴推荐</div>
             <div class="page2-head2">Recomended Partner</div>
             <div class="page2-hidden-list">
-                <c:forEach begin="0" end="7" var="test">
+                <c:forEach  var="test" items ="${list}">
                     <div class="page2-hidden-item" onclick="changePartner('')">
                         <div class="page2-hidden-item-image">
-                            <img src=''>
+                            <img src="${test.headp}">
                         </div>
-                        <div class="page2-hidden-name">&nbsp; userName</div>
-                        <div class="page2-hidden-C">&nbsp;我说：汉语</div>
-                        <div class="page2-hidden-E">&nbsp;I speak : Chinese</div>
-                        <div class="page2-hidden-C">&nbsp;学习：英语</div>
-                        <div class="page2-hidden-E">&nbsp;I learn : English</div>
+                        <div class="page2-hidden-name">&nbsp; ${test.username}</div>
+                        <div class="page2-hidden-C">&nbsp;我说：${test.fisl}</div>
+                        <div class="page2-hidden-E">&nbsp;I speak : ${test.fislen}</div>
+                        <div class="page2-hidden-C">&nbsp;学习：${test.secl}</div>
+                        <div class="page2-hidden-E">&nbsp;I learn : ${test.seclen}</div>
                     </div>
                 </c:forEach>
-                <%--<s:iterator value="partnerList" id="pl" begin="0" status="st">
-                    <s:if test="#st.index<8">
-                        <div class="page2-hidden-item" onclick="changePartner('
-                            <s:property value="#pl.getId()"></s:property> ')">
-                            <div class="page2-hidden-item-image">
-                                <img src='<s:property value="#pl.userAvatar()"></s:property>'>
-                            </div>
-                            <div class="page2-hidden-name">&nbsp; <s:property
-                                    value="#pl.getUserName()"></s:property></div>
-                            <div class="page2-hidden-C">&nbsp;我说：<s:property
-                                    value="#pl.getMotherLanguage().getLanguage_c()"></s:property></div>
-                            <div class="page2-hidden-E">&nbsp;I speak : <s:property
-                                    value="#pl.getMotherLanguage().getLanguage_e()"></s:property></div>
-                            <div class="page2-hidden-C">&nbsp;学习：<s:property
-                                    value="#pl.getPartnerLanguage().getLanguage_c()"></s:property></div>
-                            <div class="page2-hidden-E">&nbsp;I learn : <s:property
-                                    value="#pl.getPartnerLanguage().getLanguage_e()"></s:property></div>
-                        </div>
-                    </s:if>
-                </s:iterator>--%>
-                <c:forEach begin="0" end="7" var="test">
+
+                <c:forEach begin="8" end="15" var="test" items ="${list}">
                     <div class="page2-hidden-item" onclick="changePartner('')">
                         <div class="page2-hidden-item-image">
-                            <img src=''>
+                            <img src='${test.headp}'>
                         </div>
-                        <div class="page2-hidden-name">&nbsp; userName</div>
-                        <div class="page2-hidden-C">&nbsp;我说：汉语</div>
-                        <div class="page2-hidden-E">&nbsp;I speak : Chinese</div>
-                        <div class="page2-hidden-C">&nbsp;学习：英语</div>
-                        <div class="page2-hidden-E">&nbsp;I learn : English</div>
+                        <div class="page2-hidden-name">&nbsp; ${test.username}</div>
+                        <div class="page2-hidden-C">&nbsp;我说：${test.fisl}</div>
+                        <div class="page2-hidden-E">&nbsp;I speak : ${test.fislen}</div>
+                        <div class="page2-hidden-C">&nbsp;学习：${test.secl}</div>
+                        <div class="page2-hidden-E">&nbsp;I learn : ${test.seclen}</div>
                     </div>
                 </c:forEach>
             </div>
@@ -116,26 +101,6 @@
             <div class="page2-head2">Recomended Partner</div>
             <div class="page2-hidden-list">
 
-                <%--<s:iterator value="partnerList" id="pl" begin="8" status="st">
-                    <s:if test="#st.index<12">
-                        <div class="page2-hidden-item" onclick="changePartner('
-                            <s:property value="#pl.getId()"></s:property> ')">
-                            <div class="page2-hidden-item-image">
-                                <img src='<s:property value="#pl.userAvatar()"></s:property>'>
-                            </div>
-                            <div class="page2-hidden-name">&nbsp; <s:property
-                                    value="#pl.getUserName()"></s:property></div>
-                            <div class="page2-hidden-C">&nbsp;我说 ： <s:property
-                                    value="#pl.getMotherLanguage().getLanguage_c()"></s:property></div>
-                            <div class="page2-hidden-E">&nbsp;I speak : <s:property
-                                    value="#pl.getMotherLanguage().getLanguage_e()"></s:property></div>
-                            <div class="page2-hidden-C">&nbsp;学习 ： <s:property
-                                    value="#pl.getPartnerLanguage().getLanguage_c()"></s:property></div>
-                            <div class="page2-hidden-E">&nbsp;I learn : <s:property
-                                    value="#pl.getPartnerLanguage().getLanguage_e()"></s:property></div>
-                        </div>
-                    </s:if>
-                </s:iterator>--%>
             </div>
         </div>
         <div class="page3">
@@ -156,23 +121,7 @@
                         </div>
                     </div>
                 </c:forEach>
-                <%--<s:iterator value="teacherList" begin="0" end="3" id="tl">
-                    <div class="teacher-list-item"
-                         onclick="changeTeacher('<s:property value="#tl.getId()"></s:property>')">
-                        <div class="teacher-item-img">
-                            <div class="cloth-screen"></div>
-                            <img src='<s:property value="#tl.userAvatar()"></s:property>'/>
-                        </div>
-                        <div class="teacher-item-name"><s:property value="#tl.userName()"></s:property></div>
-                        <div class="teacher-item-kill">
-                            <s:iterator value="#tl.goodAt" begin="0" id="tg" status="tg_st">
-                                <s:if test="#tg_st.index<2">
-                                    <div class="skill-item"><s:property value="#tg.getEn()"></s:property></div>
-                                </s:if>
-                            </s:iterator>
-                        </div>
-                    </div>
-                </s:iterator>--%>
+
             </div>
         </div>
         <div class="teacher-list teacher-list-extra">
@@ -190,22 +139,7 @@
                     </div>
                 </div>
             </c:forEach>
-            <%--<s:iterator value="teacherList" begin="4" id="tl">
-                <div class="teacher-list-item" onclick="changeTeacher('<s:property value="#tl.getId()"></s:property>')">
-                    <div class="teacher-item-img">
-                        <div class="cloth-screen"></div>
-                        <img src='<s:property value="#tl.userAvatar()"></s:property>'/>
-                    </div>
-                    <div class="teacher-item-name"><s:property value="#tl.userName()"></s:property></div>
-                    <div class="teacher-item-kill">
-                        <s:iterator value="#tl.getGoodAt()" begin="0" id="tg" status="tg_st">
-                            <s:if test="#tg_st.index<2">
-                                <div class="skill-item"><s:property value="#tg.getEn()"></s:property></div>
-                            </s:if>
-                        </s:iterator>
-                    </div>
-                </div>
-            </s:iterator>--%>
+
         </div>
         <div class="page3-foot1"></div>
         <div class="page3-foot2">More</div>
