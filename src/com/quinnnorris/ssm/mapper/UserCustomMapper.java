@@ -36,5 +36,11 @@ public interface UserCustomMapper {
     public List<PartnerCustom> selectPartnerin16(int sum);
 
     public List<TeacherCustom> selectTeacherin4(int sum);
+
+    public List<TeacherCustom> selectTeacherRet(TeacherCustom teacherCustom);
+
+    public List<TeacherCustom> selectIdByTeaGood(Tea_goodCustom tea_goodCustom);
+
+    public TeacherCustom selectTeacherByIdGood(Tea_goodCustom tea_goodCustom);
 }
 

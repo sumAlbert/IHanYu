@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -147,10 +149,41 @@ public class VisitController {
         return "homePage";
     }
 
+
     @RequestMapping("/searchTeacher")
-    public String searchingTeacher(Model model) {
-        BaseJson baseJson = visitServiceImpl.setTeacherCount(model);
+    public String searchingTeacher() {
         return "teacherSearch";
     }
+
+    /**
+     * 方法返回一个BaseJson数据，这个数据中的obejct中存放了一个list，
+     * list中有至多6个map，每个map有如下可取的String键值：
+     * name 名字
+     * headp 头像
+     * lati 经度
+     * longi 纬度
+     * id 用户id
+     * payment 薪酬
+     * location 地址
+     *
+     * @param tag_info
+     * @param page
+     * @return
+     */
+    @RequestMapping("/searchTea")
+    @ResponseBody
+    public BaseJson searchingTeacher(@RequestParam String tag_info, @RequestParam String page) {
+        //BaseJson baseJson = visitServiceImpl.setTeacherCount(Integer.parseInt(page),);
+        //System.out.println(tag_info);
+        boolean[] tagb = new boolean[20];
+        for (int i = 0; i < 20; i++) {
+            char bool = tag_info.charAt(tag_info.indexOf((i + 1) + "") + 4);
+            if (bool == 'f') tagb[i] = false;
+            else tagb[i] = true;
+        }
+        BaseJson baseJson = visitServiceImpl.serachTeacherSer(tagb,page);
+        return baseJson;
+    }
+
 
 }

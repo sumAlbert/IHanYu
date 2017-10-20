@@ -11,11 +11,11 @@
         VALUE (#{id},#{firstname},#{lastname},#{sex},#{style},#{experience},#{location},#{payment},#{wechat})
     </insert>
 
-    <insert id="insertTeaGoodFromReg"  parameterType="Tea_goodCustom">
+    <insert id="insertTeaGoodFromReg" parameterType="Tea_goodCustom">
         INSERT INTO tea_good  VALUE (#{id},#{goodat})
     </insert>
 
-    <insert id="insertTeaTimeFromReg"  parameterType="Tea_timeCustom">
+    <insert id="insertTeaTimeFromReg" parameterType="Tea_timeCustom">
         INSERT INTO tea_time  VALUE (#{id},#{time})
     </insert>
 
@@ -30,13 +30,25 @@
     <insert id="insertPartnerFromReg" parameterType="PartnerCustom">
         INSERT INTO partner VALUE (#{id},#{firstL_id},#{secondL_id},#{sex},#{psex},#{selfIntro},#{isStudent},#{university})
     </insert>
-    
+
     <select id="selectPartnerin16" parameterType="int" resultType="PartnerCustom">
         SELECT * FROM partner limit 0,#{sum}
     </select>
 
     <select id="selectTeacherin4" parameterType="int" resultType="TeacherCustom">
         SELECT * FROM teacher limit 0,#{sum}
+    </select>
+
+    <select id="selectTeacherRet" parameterType="TeacherCustom" resultType="TeacherCustom">
+        SELECT * FROM teacher limit #{startPos},#{pageSize}
+    </select>
+
+    <select id="selectIdByTeaGood" parameterType="Tea_goodCustom" resultType="TeacherCustom">
+        SELECT id FROM tea_good WHERE goodat = #{goodat}
+    </select>
+
+    <select id="selectTeacherByIdGood" parameterType="Tea_goodCustom" resultType="TeacherCustom">
+        SELECT id FROM tea_good WHERE goodat = #{goodat} AND id = #{id}
     </select>
 
 </mapper>

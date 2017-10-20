@@ -26,4 +26,7 @@ public class TeacherCustom extends Teacher {
         return pageSize;
     }
 
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
 }

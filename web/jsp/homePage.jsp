@@ -113,7 +113,7 @@
                             <div class="cloth-screen"></div>
                             <img src='${tag.headp}'/>
                         </div>
-                        <div class="teacher-item-name" ><p id="isnulls">${tag.name}</p>></div>
+                        <div class="teacher-item-name"><p id="isnulls">${tag.name}</p></div>
                         <div class="teacher-item-kill">
                                 <div class="skill-item">${tag.good1}</div>
                                 <div class="skill-item">${tag.good2}</div>

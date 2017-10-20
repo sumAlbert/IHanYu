@@ -30,5 +30,7 @@ public interface VisitService {
     public BaseJson getUserMes(UserCustom userCustom);
 
     public BaseJson setTeacherCount(Model model);
+
+    public BaseJson serachTeacherSer(boolean[] tagb, String page);
 }
 

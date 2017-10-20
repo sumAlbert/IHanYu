@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -145,28 +146,63 @@ public class VisitServiceImpl implements VisitService {
         int count = visitCustomMapper.selectTeacherCount();
         if (count % 6 == 0) model.addAttribute("page", count / 6 + "");
         else model.addAttribute("page", (count / 6 + 1) + "");
-        List<TeacherCustom> list = userCustomMapper.selectTeacherin4(6);
+        TeacherCustom teacherCustom = new TeacherCustom();
+        teacherCustom.setStartPos(/*pageNow*/ -1);
+        teacherCustom.setPageSize(6);
+        List<TeacherCustom> list = userCustomMapper.selectTeacherRet(teacherCustom);
         for (int i = 0; i < list.size(); i++) {
 
-            Map<String, String> map = new HashMap<>();
-            Tea_goodCustom tea_goodCustom = new Tea_goodCustom();
-            tea_goodCustom.setId(teacherCustom.getId());
-            tea_goodCustom.setSelectSum(2);
-            List<Tea_typeCustom> tea2good = visitCustomMapper.select2good(tea_goodCustom);
-            map.put("name", teacherCustom.getFirstname() + teacherCustom.getLastname());
-            if (tea2good.get(1) != null) map.put("good1", tea2good.get(0).getType_cn());
-            else map.put("good1", "");
-            if (tea2good.get(1) != null) map.put("good2", tea2good.get(1).getType_cn());
-            else map.put("good2", "");
-            UserCustom userCustom = new UserCustom();
-            userCustom.setId(teacherCustom.getId());
-            UserCustom user = loginCustomMapper.selectUserById(userCustom);
-            map.put("headp", user.getHeadp());
-            mapList.add(map);
+
         }
-        model.addAttribute("listTea", mapList);
+        return new BaseJson();
+    }
+
+    @Override
+    public BaseJson serachTeacherSer(boolean[] tagb, String page) {
+        int firstSer = 0;
+        int pages = Integer.parseInt(page);
+        List<Map<String, String>> list = new ArrayList<>();
+        List<TeacherCustom> listTea = new ArrayList<>();
+        for (firstSer = 0; firstSer < 20; firstSer++)
+            if (tagb[firstSer] != false) {
+                Tea_goodCustom tea_goodCustom = new Tea_goodCustom();
+                tea_goodCustom.setGoodat(firstSer + 1);
+                listTea = userCustomMapper.selectIdByTeaGood(tea_goodCustom);
+                break;
+            }
+        for (; firstSer < 20; firstSer++)
+            if (tagb[firstSer] != false)
+                for (TeacherCustom teacherCustom : listTea)
+                    if (teacherCustom != null) {
+                        Tea_goodCustom tea_goodCustom = new Tea_goodCustom();
+                        tea_goodCustom.setGoodat(firstSer + 1);
+                        tea_goodCustom.setId(teacherCustom.getId());
+                        TeacherCustom custom = userCustomMapper.selectTeacherByIdGood(tea_goodCustom);
+                        if (custom == null) teacherCustom = null;
+                    }
+        for (int i = (pages - 1) * 6; i < pages * 6; i++) {
+            if (listTea.get(i) == null) continue;
+            UserCustom userCustom = new UserCustom();
+            userCustom.setId(listTea.get(i).getId());
+            loginCustomMapper.selectUserById(userCustom);
+            Map<String, String> map = new HashMap<>();
+            map.put("headp", userCustom.getHeadp());
+            map.put("lati", userCustom.getLati() + "");
+            map.put("longi", userCustom.getLongi() + "");
+            map.put("id", userCustom.getId() + "");
+            TeacherCustom teacherCustom = new TeacherCustom();
+            teacherCustom.setId(listTea.get(i).getId());
+            teacherCustom = loginCustomMapper.selectTeacherById(teacherCustom).get(0);
+            map.put("name", teacherCustom.getFirstname() + teacherCustom.getLastname());
+            map.put("payment", teacherCustom.getPayment() + "");
+            map.put("location", teacherCustom.getLocation());
+            list.add(map);
+        }
         BaseJson baseJson = new BaseJson();
-        baseJson.setObject(mapList);
+        baseJson.setObject(list);
         return baseJson;
     }
+
 }
+
+

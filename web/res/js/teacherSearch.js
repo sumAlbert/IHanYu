@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var tag_info={}; //记录标签信息
     var now_page=0;
+    searchTeacher();
 
     //移动到标签选择按钮上
     $(".guidance-item").hover(function () {
@@ -83,7 +84,7 @@ $(document).ready(function () {
     function searchTeacher(){
         $.ajax({
             type: "post",
-            url: "/test",
+            url: "/searchTea",
             timeout: 800000,
             data : {
                 tag_info: JSON.stringify(tag_info),
