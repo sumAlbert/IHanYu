@@ -105,13 +105,17 @@ body,html{margin:0;padding:0;width:100%;}
 .guidance-item-hidden{
     display: none;
     background: white;
-    width: 24em;
+    width: 30em;
     position: relative;
     border: 1px solid #ccc;
     top: -1px;
     z-index: 1;
     border-radius: 0 .2em .2em .2em;
 }
+#gender{
+    width: 14em;
+}
+
 .guidance-item-hidden-box{
     width: 100%;
     display: flex;
@@ -122,7 +126,10 @@ body,html{margin:0;padding:0;width:100%;}
 .guidance-item-hidden-item{
     line-height: 1.8em;
     height: 1.8em;
-    width: 12em;
+    width: 15em;
+}
+.gender-item{
+    width: 7em;
 }
 .guidance-item-hidden-item-flag{
     display: inline-block;
